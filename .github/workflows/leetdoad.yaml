@@ -11,6 +11,7 @@ on:
 jobs:
   leetdoad-scraping:
     runs-on: ubuntu-latest
+    environment: LEETCODE_COOKIE
     steps:
       # Install go in the workflow.
       - name: set up go
