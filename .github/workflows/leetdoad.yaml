@@ -27,7 +27,7 @@ jobs:
       - name: leetdoad scraping
         run: leetdoad
         # If you want save your submissions in a subfolder of your repo, using the `working-directory` to specify relative path, otherwise remove the following line.
-        working-directory: <SUB_PATH>
+        #working-directory: <SUB_PATH>
         env: 
           # The Cookie needs to be added in Settings -> Secrets of your repo.
           LEETCODE_COOKIE: ${{ secrets.LEETCODE_COOKIE }}
