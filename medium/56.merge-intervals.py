@@ -1,26 +1,24 @@
-"""
-[[1,3],[2,6],[8,10],[15,18]]
-
-[[1,6],[8,10],[15,18]]
-"""
 
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        intervals.sort(key=lambda x: x[0])
         res = []
-        last_b, last_e = intervals[0] #1,3
-        for b,e in intervals[1:]:
-            if b <= last_e: #8,
-                last_e = max(e,last_e) 
-                continue
-            res.append([last_b, last_e])
-            last_b, last_e = b,e #8,10
-        res.append([last_b, last_e])
+        intervals.sort()
+        last_start = intervals[0][0]
+        last_end = intervals[0][1]
+        current_int = []
+        for i in intervals:
+            start = i[0]
+            end = i[1]
+            if last_end < start:
+                current_int.append(last_start)
+                current_int.append(last_end)
+                res.append(current_int)
+                current_int = []
+                last_start = start
+            last_end = max(end, last_end)
+        current_int.append(last_start)
+        current_int.append(last_end)
+        res.append(current_int)
         return res
                 
-            
-            
-            
-            
-        
