@@ -1,3 +1,4 @@
+package main
 func smallerNumbersThanCurrent(nums []int) []int {
     res := make([]int, len(nums))
     for i, num1 := range nums {

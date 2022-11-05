@@ -8,21 +8,29 @@ class Node:
         self.next = next
 """
 
-class Solution:
-    def connect(self, root: 'Node') -> 'Node':
-        return self._connect(root, None)
-    
-    def _connect(self, root: 'Node', _next: 'Node') -> 'Node':
-        
-        if not root:
-            return None
-        
-        #print(root.val, _next)
-        
-        root.next = _next
-        self._connect(root.left, root.right)
-        self._connect(root.right, root.next.left if root.next else None) 
-        
-        return root
+from collections import deque
 
+class Solution:
+    def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+        if not root:
+            return root
+        q = deque()
+        q.append((root,0))
+        last_node = root
+        last_level = 0
+        while q:
+            node,level = q.popleft()
+            if last_node != node:
+                if last_level == level:
+                    last_node.next = node
+            last_node = node
+            last_level = level
+                    
+            if node.left:
+                q.append((node.left, level+1))
+            if node.right:
+                q.append((node.right, level+1))
+        return root
+            
+            
         

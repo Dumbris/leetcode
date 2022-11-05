@@ -1,3 +1,4 @@
+package main
 func runningSum(nums []int) []int {
     res := make([]int,len(nums))
     var sum int = 0

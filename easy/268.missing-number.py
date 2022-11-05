@@ -1,26 +1,25 @@
 """
 [3,0,1]
-   ^
-[2,0,1]
- ^   
- 
-[1,0,2]
-[0,1,2]
+ ^
+i,j
+0,3
+
 """
 
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
+        n = max(nums)
+        nums.append(n)
         i = 0
-        l = len(nums) #3
-        while i < l:
-            if nums[i] < l and nums[i] != i:
-                #print(i, nums, nums[nums[i]], nums[i])
-                nums[nums[i]], nums[i] = nums[i], nums[nums[i]] #i1,i0 = 3,0 [0,3,1]
+        while i < n:
+            j = nums[i] #index
+            if (nums[i] != nums[j]):
+                nums[i], nums[j] = nums[j], nums[i]
             else:
                 i += 1
+        #print(nums)
+        for i in range(len(nums)):
+            if nums[i] != i:
+                return i
                 
-        for j in range(len(nums)):
-            if nums[j] != j:
-                return j
-        return len(nums)
-                
+        

@@ -1,3 +1,4 @@
+package main
 import "fmt"
 
 func arr2map(nums []int) map[int]int {

@@ -1,3 +1,4 @@
+package main
 func countSmaller(nums []int) []int {
     res := make([]int, len(nums))
     var prev int 

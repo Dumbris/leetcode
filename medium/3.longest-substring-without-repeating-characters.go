@@ -1,3 +1,4 @@
+package main
 func lengthOfLongestSubstring(s string) int {
     r := []rune(s)
     set := make(map[rune]int) // New empty set

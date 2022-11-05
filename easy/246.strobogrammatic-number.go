@@ -1,3 +1,4 @@
+package main
 func isStrobogrammatic(num string) bool {
     m := map[int]int{6:9, 9:6, 0:0, 8:8, 1:1} 
     for i := 0; i <= len(num)/2; i++ {

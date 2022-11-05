@@ -1,3 +1,4 @@
+package main
 func romanToInt(s string) int {
     var res int = 0
     m := map[string]int{"M":1000,

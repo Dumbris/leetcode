@@ -1,3 +1,4 @@
+package main
 func maxArea(height []int) int {
     var i, j int = 0, len(height)-1
     var volume_max int = 0

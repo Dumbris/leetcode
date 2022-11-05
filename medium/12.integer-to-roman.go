@@ -1,3 +1,4 @@
+package main
 func intToRoman(num int) string {
     var buffer bytes.Buffer
     m := map[int]string{1000:"M",
